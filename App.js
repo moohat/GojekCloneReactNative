@@ -17,7 +17,9 @@ import {
   Text,
   StatusBar,
   Image,
-  TextInput
+  TextInput,
+  Button,
+  TouchableOpacity
 } from 'react-native';
 
 import {
@@ -34,10 +36,11 @@ import IconHome from './icon/home.png';
 
 const App: () => React$Node = () => {
   return (
+   
     <View style={{ flex: 1 }}>
       {/* content */}
-      <View style={{ flex: 1, backgroundColor: 'white' }}>
-        {/* searc bar */}
+      <ScrollView style={{ flex: 1, backgroundColor: 'white' }}>
+        {/* search bar */}
         <View style={{ marginHorizontal: 17, flexDirection: 'row', paddingTop: 15 }}>
 
           <View style={{ position: 'relative' }}>
@@ -72,8 +75,9 @@ const App: () => React$Node = () => {
               <Text style={{ color: 'white', fontSize: 13, fontWeight: 'bold', marginTop: 15 }}>More</Text>
             </View>
           </View>
+        </View>
         {/* main feature */}
-        <View style={{ flexDirection: 'row', flexWrap: 'wrap', marginTop: 18, }}>
+        <View style={{ marginHorizontal:17, flexDirection: 'row', flexWrap: 'wrap', marginTop: 18, }}>
           <View style={{justifyContent:'space-between', flexDirection: 'row', width: '100%', marginBottom: 18}}>
             <View style={{ width: '25%', alignItems:'center'}}>
 
@@ -135,13 +139,58 @@ const App: () => React$Node = () => {
             </View>
           </View>
         </View>
-        </View>
+        <View style={{height: 17, backgroundColor:'#F2F2F4', marginTop: 20}}></View>
+
+          {/* News Section  */}
+          <View style={{paddingTop: 16, paddingHorizontal: 16}}>
+          <View style={{position: 'relative'}}>
+            <Image source={require('./dummy/sepak-bola.jpg')} style={{height: 170, width: '100%', borderRadius: 6}}/>
+            <View style={{width: '100%', height:'100%', position: 'absolute', top:0, left: 0, backgroundColor:'black', opacity:0.2, borderRadius: 6}}></View>
+            <View style={{height: 15,  width:55, position:'absolute', top:16, left: 16}}>
+            <Image source={require('./logo/white.png')} style={{width: undefined, height:undefined, resizeMode:'contain', flex: 1}} />
+
+            </View>
+          </View>
+          <View style={{paddingTop: 16, paddingBottom: 20, borderBottomColor: '#e8e9ed', borderBottomWidth: 1,}}>
+            <Text style={{fontSize: 18, fontWeight:'bold', color:'#1c1c1c'}}>Go-NEWS</Text>
+            <Text style={{fontSize: 14,  color: '#7a7a7a', marginBottom: 11}}>dia bukan evan dimas</Text>
+            <TouchableOpacity style={{ backgroundColor:'#61A756', paddingHorizontal: 12, paddingVertical: 11, alignSelf: 'flex-end'}}>
+              <Text style={{fontSize: 13, fontWeight:'bold', color:'white', textAlign: 'center'}}>Read More</Text>
+            </TouchableOpacity>
+          </View>
+          </View>
+          {/* Gofood Banner Section  */}
+          <View style={{padding: 16 }}>
+            <View style={{position:'relative'}}>
+          <Image source={require('./dummy/food-banner.jpg')} style={{height: 170, width: '100%', borderRadius: 6}}/>
+          <View style={{width: '100%', height:'100%', position: 'absolute', top:0, left: 0, backgroundColor:'black', opacity:0.15, borderRadius: 6}}></View>
+            <View style={{height: 15,  width:55, position:'absolute', top:16, left: 16}}>
+            <Image source={require('./logo/white.png')} style={{width: undefined, height:undefined, resizeMode:'contain', flex: 1}} />
+            </View>
+            <View style={{position:'absolute', bottom:0, left: 0, width: '100%', paddingBottom: 16,paddingHorizontal: 2, flexDirection: 'row', alignItems: 'center'}}>
+              <View>
+                <Text style={{fontSize: 16, fontWeight: 'bold', color: 'white', marginBottom: 8}}>Free Go-FOOD Voucher</Text>
+                <Text style={{fontSize: 12, fontWeight: '500', color: 'white'}}>Quick, beofre the run out!</Text>
+              </View>
+              <View style={{flex: 1, paddingLeft: 12, }}>
+              <TouchableOpacity style={{ backgroundColor:'#61A756', paddingHorizontal: 12, paddingVertical: 11, alignSelf: 'stretch', borderRadius: 8}}>
+              <Text style={{fontSize: 12, fontWeight:'bold', color:'white', textAlign: 'center'}}>GET VOUCHER</Text>
+            </TouchableOpacity>
+              </View>
+            </View>
+            </View>
+            <View style={{borderBottomColor: '#e8e9ed', borderBottomWidth:1, marginBottom: 20, marginTop: 16, }}>
+
+            </View>
+          </View>
+
+        
 
 
-      </View>
+      </ScrollView>
 
-      {/* button navigation */}
-      <View style={{ height: 54, flexDirection: 'row', borderWidth: 1, backgroundColor: 'white' }}>
+      {/* BOTTOM navigation */}
+      <View style={{ height: 54, flexDirection: 'row',  backgroundColor: 'white' }}>
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
           <Image style={{ height: 26, width: 26 }} source={require('./icon/home-active.png')} />
           <Text style={{ fontSize: 10, marginTop: 4, color: '#43ab4a' }}>Home</Text>
