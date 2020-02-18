@@ -8,7 +8,7 @@
  * @flow
  */
 
-import React from 'react';
+import React, {Component} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -22,15 +22,28 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-const GopayFeature = () => {
-  return(
+// using functional component
+// const GopayFeature = (props) => {
+//   return(
+//   <View style={{ flex: 1, alignItems: 'center' }}>
+//     <Image source={props.img} />
+//     <Text style={{ color: 'white', fontSize: 13, fontWeight: 'bold', marginTop: 15 }}>{props.title}</Text>
+//   </View>
+//   )
+// }
 
-  <View style={{ flex: 1, alignItems: 'center' }}>
-    <Image source={require('./src/assets/icon/pay.png')} />
-    <Text style={{ color: 'white', fontSize: 13, fontWeight: 'bold', marginTop: 15 }}>Pay</Text>
+//using class component
+class GopayFeature extends Component{
+  render(){
+    return(
+      <View style={{ flex: 1, alignItems: 'center' }}>
+    <Image source={this.props.img} />
+    <Text style={{ color: 'white', fontSize: 13, fontWeight: 'bold', marginTop: 15 }}>{this.props.title}</Text>
   </View>
-  )
+    )
+  }
 }
+
 
 const App: () => React$Node = () => {
   return (
@@ -56,23 +69,11 @@ const App: () => React$Node = () => {
             <Text style={{ color: 'white', fontSize: 17, fontWeight: 'bold' }}>Rp 50.000</Text>
           </View>
           <View style={{ flexDirection: 'row', paddingTop: 20, paddingBottom: 14, backgroundColor: '#2f65b0', borderBottomLeftRadius: 4, borderBottomRightRadius: 4 }}>
-            {/* <View style={{ flex: 1, alignItems: 'center' }}>
-              <Image source={require('./src/assets/icon/pay.png')} />
-              <Text style={{ color: 'white', fontSize: 13, fontWeight: 'bold', marginTop: 15 }}>Pay</Text>
-            </View> */}
-            <GopayFeature />
-            <View style={{ flex: 1, alignItems: 'center' }}>
-              <Image source={require('./src/assets/icon/nearby.png')} />
-              <Text style={{ color: 'white', fontSize: 13, fontWeight: 'bold', marginTop: 15 }}>Nearby</Text>
-            </View>
-            <View style={{ flex: 1, alignItems: 'center' }}>
-              <Image source={require('./src/assets/icon/topup.png')} />
-              <Text style={{ color: 'white', fontSize: 13, fontWeight: 'bold', marginTop: 15 }}>Topup</Text>
-            </View>
-            <View style={{ flex: 1, alignItems: 'center' }}>
-              <Image source={require('./src/assets/icon/more.png')} />
-              <Text style={{ color: 'white', fontSize: 13, fontWeight: 'bold', marginTop: 15 }}>More</Text>
-            </View>
+           
+            <GopayFeature title='Pay'   img={require('./src/assets/icon/pay.png')}/>
+            <GopayFeature title='Nearby'  img={require('./src/assets/icon/nearby.png')}/>
+            <GopayFeature title='Top Up' img={require('./src/assets/icon/topup.png')}/>
+            <GopayFeature title='More' img={require('./src/assets/icon/more.png')} />            
           </View>
         </View>
         {/* main feature */}
