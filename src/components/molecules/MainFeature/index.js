@@ -4,7 +4,7 @@ import React from 'react';
 
 import {View, Text, Image} from 'react-native';
 
-const MainFeature = (props) => {
+const MainFeature = props => {
   return (
     <View style={{width: '25%', alignItems: 'center', marginBottom: 18}}>
       <View
