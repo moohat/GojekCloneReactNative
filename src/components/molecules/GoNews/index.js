@@ -3,7 +3,7 @@
 import React from 'react';
 import {View, Image, Text, TouchableOpacity} from 'react-native';
 
-const GoNews = props => {
+const GoNews = (props) => {
   return (
     <View style={{paddingTop: 16, paddingHorizontal: 16}}>
       <View style={{position: 'relative'}}>
@@ -61,15 +61,16 @@ const GoNews = props => {
             paddingHorizontal: 12,
             paddingVertical: 11,
             alignSelf: 'flex-end',
-          }}>
+            borderRadius: 4
+          }} onPress={props.onPress}>
           <Text
             style={{
               fontSize: 13,
               fontWeight: 'bold',
               color: 'white',
               textAlign: 'center',
-            }}>
-            Read More
+            }} >
+            READ
           </Text>
         </TouchableOpacity>
       </View>
