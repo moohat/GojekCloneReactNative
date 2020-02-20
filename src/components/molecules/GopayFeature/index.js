@@ -2,21 +2,25 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {View, Image, Text} from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 // using functional component
 const GopayFeature = props => {
   return (
     <View style={{flex: 1, alignItems: 'center'}}>
-      <Image source={props.img} />
-      <Text
-        style={{
-          color: 'white',
-          fontSize: 13,
-          fontWeight: 'bold',
-          marginTop: 15,
-        }}>
-        {props.title}
-      </Text>
+      <TouchableOpacity onPress={props.onPress}>
+        <Image source={props.img} />
+        <Text
+          style={{
+            color: 'white',
+            fontSize: 13,
+            fontWeight: 'bold',
+            marginTop: 15,
+            textAlign: 'center'
+          }}>
+          {props.title}
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -32,6 +36,5 @@ const GopayFeature = props => {
 //     )
 //   }
 // }
-
 
 export default GopayFeature;
